@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root{
+    --azulEscuro: #152442;
+    --azulVivido: #023e94;
+    --azulEscuro2: #122b6a;
+    --cor3: #048f36;
+
+    --font-padrao: Verdana, Geneva, Tahoma, sans-serif;
+    --font-destaque: 'Bebas Neue', cursive;
+
+}
+*{
+    margin:auto;
+    padding: 0;
+
+}
+
+body{
+    background-color: #e9edf3;
+}
+/*---------------------CONFIG TITULO---------------------------------------- */
+div#titulo{
+    background-color:var(--azulEscuro) ;
+    width: 1108px;
+    height: 62px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+div#titulo > h1{
+    color: white;
+    text-align: center;
+    font-size: 43px;
+}
+
+main{
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/*-----------TABELA CADASTRO CLIENTE---------------------------------------- */
+div#ccliente{
+    background-color: var(--azulEscuro);
+    width: 281px;
+    height: 690px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 120px;
+}
+div#ccliente > h1{
+    color: white;
+    font-size: 40px;
+    text-align: justify;
+    padding-left: 18px;
+    padding-top: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div#ccliente > h6{
+    color: white;
+    padding-left: 18px;
+    padding-top: 18px;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.campo{
+    width: 250px;
+    height: 29px;
+    background-color: rgb(252, 252, 252);
+    border-radius: 5px;
+    margin-left: 18px;
+}
+#salvar{
+
+    background-color: #048f36;
+    width: 250px;
+    height: 42px;
+    border-radius: 5px;
+    margin-top: 177px;
+    margin-left: 18px;
+
+}
+
+#salvar > h5 {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 9px;
+}
+
+/*-----------------TABELA MEUS CLIENTE--------------------------------------- */
+
+#tabela{
+    background-color: white;
+    width:820px;
+    height: 690px;
+    margin-top: 20px;
+    margin-right: 120px;
+    border-radius: 10px;
+}
+
+#cabecalho{
+    display: flex;
+    justify-content: space-between; /* título na esquerda, pesquisa na direita */
+    align-items: center;            /* alinha os dois na vertical */
+    box-sizing: border-box;
+    width: 100%;
+    height: 99px;
+    padding: 0 27px;
+    background-color: white;
+    border-radius: 10px;
+}
+#cabecalho > h6{
+    font-size: 25px;
+    margin: 0;
+    color: var(--azulEscuro);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#cabecalho > #pesquisa{
+    width: 200px;
+    height: 39px;
+    background-color: white;
+    border: 1px solid #b5bcc9;   /* a borda que faltava */
+    border-radius: 5px;
+    margin: 0;
+    box-sizing: border-box;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    color: gray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+/*-----------------TABELA DE CLIENTES (conteudo)------------------------------ */
+
+#conteudo{
+    padding: 0 10px;
+}
+
+#conteudo table{
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    color: var(--azulEscuro);
+}
+
+#conteudo tr.titulos{
+    background-color: #2a5aa8;
+    color: white;
+}
+
+#conteudo th{
+    height: 34px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#conteudo td{
+    height: 50px;
+    padding-left: 10px;
+}
+
+#conteudo tr:nth-child(odd){
+    background-color: #eceff4;
+}
+
+#conteudo tr:nth-child(even){
+    background-color: white;
+}
+
+#conteudo tr.titulos{
+    background-color: #2a5aa8;
+}
+
+.editar{
+    color: #048f36;
+    margin-right: 8px;
+}
+
+.excluir{
+    color: #e5484d;
+}

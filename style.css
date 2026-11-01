@@ -72,6 +72,12 @@ div#ccliente > h6{
     background-color: rgb(252, 252, 252);
     border-radius: 5px;
     margin-left: 18px;
+    display: block;
+    box-sizing: border-box;
+    border: none;
+    padding-left: 8px;
+    font-size: 13px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #salvar{
 
@@ -123,17 +129,16 @@ div#ccliente > h6{
 #cabecalho > #pesquisa{
     width: 200px;
     height: 39px;
-    background-color: white;
-    border: 1px solid #b5bcc9;   /* a borda que faltava */
-    border-radius: 5px;
     margin: 0;
-    box-sizing: border-box;
     padding-left: 10px;
     display: flex;
     align-items: center;
-    color: gray;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
+    border: none;
+    background: transparent;
+    
+    
 }
 
 /*-----------------TABELA DE CLIENTES (conteudo)------------------------------ */

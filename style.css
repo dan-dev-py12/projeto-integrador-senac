@@ -10,8 +10,7 @@
     --font-destaque: 'Bebas Neue', cursive;
 }
  
-/* Removi o "margin: auto" do *, ele atrapalhava o layout.
-   Agora o centro é feito só no .container. */
+
 *{
     margin: 0;
     padding: 0;
@@ -23,10 +22,10 @@ body{
     font-family: var(--font-padrao);
 }
  
-/* ---------- CONTAINER: centraliza em tela grande ---------- */
+/* ---------- CONTAINER---------- */
 .container{
     width: 100%;
-    max-width: 1200px;      /* em tela cheia fica centralizado com esse limite */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -45,7 +44,7 @@ div#titulo{
 div#titulo > h1{
     color: white;
     text-align: center;
-    font-size: clamp(26px, 6vw, 43px);   /* diminui sozinho em tela pequena */
+    font-size: clamp(26px, 6vw, 43px);
 }
  
 main{
@@ -123,7 +122,7 @@ main{
 #tabela{
     background-color: white;
     flex: 1;
-    min-width: 0;           /* permite encolher dentro do flex */
+    min-width: 0;
     border-radius: 10px;
     padding-bottom: 10px;
 }
@@ -132,7 +131,7 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;        /* quebra linha em tela pequena */
+    flex-wrap: wrap;
     gap: 12px;
     padding: 20px 27px;
     background-color: white;
@@ -205,7 +204,7 @@ main{
     color: #6b7690;
 }
  
-/* Botões de ação (parecem texto, mas são clicáveis) */
+
 .editar,
 .excluir{
     background: none;
@@ -227,7 +226,7 @@ main{
 }
  
 /*-----------------RESPONSIVO------------------------------------------------ */
-/* Tablet / celular: formulário em cima, lista embaixo */
+
 @media (max-width: 900px){
     main{
         flex-direction: column;

@@ -1,193 +1,254 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
+ 
 :root{
     --azulEscuro: #152442;
     --azulVivido: #023e94;
     --azulEscuro2: #122b6a;
     --cor3: #048f36;
-
+ 
     --font-padrao: Verdana, Geneva, Tahoma, sans-serif;
     --font-destaque: 'Bebas Neue', cursive;
-
 }
+ 
+/* Removi o "margin: auto" do *, ele atrapalhava o layout.
+   Agora o centro é feito só no .container. */
 *{
-    margin:auto;
+    margin: 0;
     padding: 0;
-
+    box-sizing: border-box;
 }
-
+ 
 body{
     background-color: #e9edf3;
+    font-family: var(--font-padrao);
 }
+ 
+/* ---------- CONTAINER: centraliza em tela grande ---------- */
+.container{
+    width: 100%;
+    max-width: 1200px;      /* em tela cheia fica centralizado com esse limite */
+    margin: 0 auto;
+    padding: 20px;
+}
+ 
 /*---------------------CONFIG TITULO---------------------------------------- */
 div#titulo{
-    background-color:var(--azulEscuro) ;
-    width: 1108px;
-    height: 62px;
+    background-color: var(--azulEscuro);
+    width: 100%;
+    min-height: 62px;
     border-radius: 10px;
-    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
 }
 div#titulo > h1{
     color: white;
     text-align: center;
-    font-size: 43px;
+    font-size: clamp(26px, 6vw, 43px);   /* diminui sozinho em tela pequena */
 }
-
+ 
 main{
     display: flex;
     gap: 20px;
     align-items: flex-start;
+    margin-top: 20px;
 }
-
-/*-----------TABELA CADASTRO CLIENTE---------------------------------------- */
-div#ccliente{
+ 
+/*-----------FORMULÁRIO CADASTRO CLIENTE---------------------------------------- */
+#ccliente{
     background-color: var(--azulEscuro);
     width: 281px;
-    height: 690px;
+    flex-shrink: 0;
     border-radius: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 120px;
+    padding: 18px;
 }
-div#ccliente > h1{
+#ccliente h1{
     color: white;
     font-size: 40px;
-    text-align: justify;
-    padding-left: 18px;
-    padding-top: 18px;
+    text-align: left;
     font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 4px;
 }
-
-div#ccliente > h6{
+ 
+#ccliente label{
+    display: block;
     color: white;
-    padding-left: 18px;
     padding-top: 18px;
+    padding-bottom: 6px;
     font-size: 18px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
 }
-
+ 
 .campo{
-    width: 250px;
+    width: 100%;
     height: 29px;
     background-color: rgb(252, 252, 252);
     border-radius: 5px;
-    margin-left: 18px;
     display: block;
-    box-sizing: border-box;
     border: none;
     padding-left: 8px;
     font-size: 13px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--font-padrao);
+}
+ 
+#salvar,
+#cancelar{
+    display: block;
+    width: 100%;
+    height: 42px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: var(--font-padrao);
+    font-size: 16px;
+    cursor: pointer;
 }
 #salvar{
-
-    background-color: #048f36;
-    width: 250px;
-    height: 42px;
-    border-radius: 5px;
-    margin-top: 177px;
-    margin-left: 18px;
-
+    background-color: var(--cor3);
+    margin-top: 40px;
 }
-
-#salvar > h5 {
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
-    text-align: center;
-    padding-top: 9px;
+#salvar:hover{
+    filter: brightness(1.1);
 }
-
-/*-----------------TABELA MEUS CLIENTE--------------------------------------- */
-
+#cancelar{
+    background-color: #5a6b8c;
+    margin-top: 10px;
+}
+#cancelar[hidden]{
+    display: none;
+}
+ 
+/*-----------------LISTA MEUS CLIENTES--------------------------------------- */
 #tabela{
     background-color: white;
-    width:820px;
-    height: 690px;
-    margin-top: 20px;
-    margin-right: 120px;
+    flex: 1;
+    min-width: 0;           /* permite encolher dentro do flex */
     border-radius: 10px;
+    padding-bottom: 10px;
 }
-
+ 
 #cabecalho{
     display: flex;
-    justify-content: space-between; /* título na esquerda, pesquisa na direita */
-    align-items: center;            /* alinha os dois na vertical */
-    box-sizing: border-box;
-    width: 100%;
-    height: 99px;
-    padding: 0 27px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;        /* quebra linha em tela pequena */
+    gap: 12px;
+    padding: 20px 27px;
     background-color: white;
     border-radius: 10px;
 }
 #cabecalho > h6{
     font-size: 25px;
-    margin: 0;
     color: var(--azulEscuro);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--font-padrao);
 }
 #cabecalho > #pesquisa{
-    width: 200px;
-    height: 39px;
-    margin: 0;
-    padding-left: 10px;
-    display: flex;
-    align-items: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 12px;
-    border: none;
-    background: transparent;
-    
-    
+    width: 220px;
+    max-width: 100%;
 }
-
+#pesquisa input{
+    width: 100%;
+    height: 39px;
+    padding-left: 10px;
+    font-family: var(--font-padrao);
+    font-size: 12px;
+    border: 1px solid #c7cfdc;
+    border-radius: 5px;
+    outline: none;
+}
+#pesquisa input:focus{
+    border-color: var(--azulVivido);
+}
+ 
 /*-----------------TABELA DE CLIENTES (conteudo)------------------------------ */
-
 #conteudo{
     padding: 0 10px;
+    overflow-x: auto;       /* em tela pequena a tabela rola para o lado */
 }
-
+ 
 #conteudo table{
     width: 100%;
+    min-width: 560px;
     border-collapse: collapse;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--font-padrao);
     font-size: 12px;
     color: var(--azulEscuro);
 }
-
+ 
 #conteudo tr.titulos{
     background-color: #2a5aa8;
     color: white;
 }
-
+ 
 #conteudo th{
     height: 34px;
     text-align: left;
     padding-left: 10px;
 }
-
+ 
 #conteudo td{
     height: 50px;
     padding-left: 10px;
 }
-
-#conteudo tr:nth-child(odd){
+ 
+#conteudo tbody tr:nth-child(odd){
     background-color: #eceff4;
 }
-
-#conteudo tr:nth-child(even){
+#conteudo tbody tr:nth-child(even){
     background-color: white;
 }
-
-#conteudo tr.titulos{
-    background-color: #2a5aa8;
+ 
+#conteudo td.vazio{
+    text-align: center;
+    padding: 20px;
+    color: #6b7690;
 }
-
-.editar{
-    color: #048f36;
+ 
+/* Botões de ação (parecem texto, mas são clicáveis) */
+.editar,
+.excluir{
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
     margin-right: 8px;
 }
-
+.editar{
+    color: var(--cor3);
+}
 .excluir{
     color: #e5484d;
+}
+.editar:hover,
+.excluir:hover{
+    text-decoration: underline;
+}
+ 
+/*-----------------RESPONSIVO------------------------------------------------ */
+/* Tablet / celular: formulário em cima, lista embaixo */
+@media (max-width: 900px){
+    main{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #ccliente{
+        width: 100%;
+    }
+}
+ 
+@media (max-width: 480px){
+    .container{
+        padding: 12px;
+    }
+    #ccliente h1{
+        font-size: 32px;
+    }
+    #cabecalho{
+        padding: 16px;
+    }
+    #cabecalho > #pesquisa{
+        width: 100%;
+    }
 }
